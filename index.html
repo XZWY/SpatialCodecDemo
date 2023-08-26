@@ -5,7 +5,7 @@
 		
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-        <meta name="description" content="Learning Binaural Demos">
+        <meta name="description" content="SpatialCodec Demos">
         <meta name="author" content="Zhongweiyang Xu">
 
 	    <title>Learning to Separate Voices by Spatial Regions</title>
@@ -430,10 +430,10 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
     		        <div class="collapse navbar-collapse navbar-right" id="dropdown-box-1">
 	    			    <ul class="nav navbar-nav">
-		    			    <li><a href="https://uiuc-earable-computing.github.io/binaural/#intro_target">Overview</a></li>
-                            <li><a href="https://uiuc-earable-computing.github.io/binaural/#results_target">Results</a></li>
-			    			<li><a href="https://uiuc-earable-computing.github.io/binaural/#demos_target">Demos</a></li>
-				    		<li><a href="https://uiuc-earable-computing.github.io/binaural/#references_target">References</a></li>
+		    			    <li><a href="https://xzwy.github.io/SpatialCodecDemo/#intro_target">Overview</a></li>
+                            <li><a href="https://xzwy.github.io/SpatialCodecDemo/#results_target">Results</a></li>
+			    			<li><a href="https://xzwy.github.io/SpatialCodecDemo/#demos_target">Demos</a></li>
+				    		<li><a href="https://xzwy.github.io/SpatialCodecDemo/#references_target">References</a></li>
 				    	</ul>
 			        </div>
                 </div>
@@ -442,14 +442,18 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
 		<div id="paper_info">
 			<div id="paper_title">
-    	        <h1>Learning to Separate Voices by Spatial Regions</h1>
-                <p style="color:lightblue;font-size:18px;">Published as conference paper at ICML 2022 
-                    [<a href="https://synrg.csl.illinois.edu/papers/source_separation_icml22.pdf">pdf</a>][<a href="https://slideslive.com/38983250/learning-to-separate-voices-by-spatial-regions">talk</a>]</p>
+    	        <h1>SpatialCodec: Neural Spatial Speech Coding</h1>
+                <!-- <p style="color:lightblue;font-size:18px;">Published as conference paper at ICML 2022  -->
+                    [<a href="https://xzwy.github.io/SpatialCodecDemo/">code</a>]</p>
 			
 
 
-				<h4><a href="https://zhongweiyangxu.web.illinois.edu/">Zhongweiyang Xu</a>, <a href="http://croy.web.engr.illinois.edu/">Romit Roy Choudhury</a></h4>
-				<h5>University of Illinois Urbana-Champaign</h5>
+				<h4><a href="https://xzwy.github.io/alanweiyang.github.io/">Zhongweiyang Xu*</a>, <a href="http://croy.web.engr.illinois.edu/">Yong Xu&dagger;</a></h4>
+				<h5>* University of Illinois Urbana-Champaign, &dagger; Carnegie Melon University, &ddagger; Tencent AI Lab, Bellevue, USA, &sharp; The Ohio State University</h5>
+                <!-- <h5>&dagger; Carnegie Melon University</h5>
+                <h5>&ddagger; Tencent AI Lab, Bellevue, USA</h5>
+                <h5>&sharp; The Ohio State University</h5> -->
+
 			</div>
 		</div>
 
@@ -465,29 +469,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                 
 
 
-                <p>We consider a special case of the classical audio source separation problem, where (1) two microphones are in an 
-                    <a href="https://synrg.csl.illinois.edu/earables.html" target="_blank">'earable'</a> device worn at the ears, 
-                    and (2) the sources need to be separated by spatial regions around the head. The figure below shows an example 
-                    of spatial regions around the head; our goal is to output one source (or mixture of sources) from each region. 
-                    
-                    <a><img src="img/binaural.jpg" class="center" style="object-fit:contain;
-                        width:400px;
-                        height:300px"></a>
-     
-                    We propose a two-stage self-supervised framework with a pre-processing module in the first stage and a DNN in the second.
-                    This framework does not assume knowledge of the number of sources, and importantly, leverages the spatial cues 
-                    provided by the user's personal head related transfer function (HRTF). Results show superior performance compared 
-                    to various baselines  (including  supervised models with generics HRTFs) and is slightly worse than the best possible
-                    model that uses  both personal HRTF and ground-truth based supervision. 
-                    
-                    <p>Personal HRTFs are not available, hence it is challenging to synthesize training signals that embed the personal HRTF.
-                    One possibility is to utilize real-world binaural recordings from earable devices which would naturally embed the 
-                    user's personal HRTF; of course, the problem is that such real-world recordings are not clean since they are 
-                    typically mixtures of multiple sources. 
-                    We propose a method to clean-up the real-world binaural recordings whenever possible, and show that this 
-                    "somewhat clean" data is adequate to train a region-wise source spearation model. 
-                    When the binaural recording is excessively contaminated, we realibly discard such data.
-                    Hence, our model is self-supervised and leverages the inhherent spatial cues encoded in personalized HRTFs.</p>
+                <p>In this work, we address the challenge of efficiently compressing microphone array recorded audio while maintaining crucial spatial cues. We propose a neural spatial audio coding framework that achieves high compression ratios, leveraging both single channel sub-band and spatial codec. Our approach encompasses two phases: first, a neural sub-band codec is designed to encode the reference channel with small bit rates, and second, a SpatialCodec captures relative spatial information for accurate multichannel reconstruction at the decoder end. We also propose a few novel evaluation metrics in our framework to measure how well the spatial cues are preserved. This project pioneers the application of neural networks to multi-microphone speech coding, demonstrating decent performance. The introduced framework holds vast potential across diverse domains including telecommunication and immersive audio systems, likely motivating further exploration in this research area through our framework. We train and evaluate our framework on synthesized reverberated speech, which contains rich spatial information.</p>
                     
                 <!-- <a><embed src="img/2_stage_pipeline.pdf"  style="object-fit:contain;
                     width:1000px;
@@ -496,24 +478,29 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                     width:1000px;
                     height:370px" class="center"></iframe></a> -->
 
-                <p>The figure below shows the two-stages of our framework. The first stage accepts real-world binaural recordings as input and employs our proposed spatial clustering method to isolate “relatively clean” spatial sources. These sources are entered into a personal database and random mixtures (of 2, 3, 4, and even 5 sources) are then drawn from the database to generate the binaural training data. This mixture dataset is then used to train a dual-channel TasNet [1] architecture, adapted for region-based separation. The reference signals (for the loss function) are the “somewhat clean” signals in our personal database, hence no clean or labeled signal is necessary.
+                <p>Figure 1 below shows our double branch framework. The first branch codes a reference channel audio while the second branch codes the spatial information.
+                    Assume we want to code M channels. The first branch takes the reference channel audio's STFT, encode it, and then reconstruct the STFT. It's is trained with single-channel recording using a combination of reconstruction and
+                    adversarial loss. The second branch (SpatialCodec) takes both spatial and spectral features (Spatial Covariance Matrix) as input, encode
+                    it, and then reconstruct (M-1) complex ratio filter. The filter is applied on the first branch's output STFT to reconstruct  is trained wtih pure snr loss. 
+                    (M-1) channel STFT. These (M-1) channels and the first branch's output together gives a M channel reconstruction. The second branch is trained
+                    with SNR loss while assuming the original reference channel audio is available on the decoder side. However, in inference, the second branch's complex ratio filter
+                    is applied on the reconstructed reference channel.
+
+                
                 </p>
 
-                <a><img src="img/two_stage.png" style="object-fit:contain;
-                    width:1000px;
-                    height:370px" class="center"></a>
+
+                <figure>
+                <img src="img/overall_framework1.png" style="object-fit:contain;
+                    width:1300px;
+                    height:350px" class="center" title='Figure 1: Our pipline, training and inference'>
+                    <center>
+                        <figcaption>Figure 1: Our Double Branch Pipline, Training and Inference</figcaption>
+                    </center>
+
+                </figure>
                 <br>  
 
-                <p>The spatial clustering method in stage one is based on the DUET [2] paper, which aims to cluster the time-frequency 
-                    bins by interaural time and level differences, as shown in the figure below. However this approach is challenging 
-                    in the binaural case due to spatial aliasing and unknown number of sources. We improve on DUET 
-                    to solve these problems; the detailed algorithm is available in <a href="https://synrg.csl.illinois.edu/papers/source_separation_icml22.pdf" target="_blank">our paper</a>. 
-                </p>
-                <a><img src="img/hi_cluster.jpg" style="object-fit:contain;
-                    width:500px;
-                    height:375px" class="center"></a>
-
-                <br>
                 <!-- <div class="architecture_caption">Fig. 1. Diagram of SISO SAGRNN. The dotted lines represent the procedures that exist only during training.</div> -->
 
             </div>
@@ -524,28 +511,45 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 	        <div id="results">
                 <h2><a class="subtitle">Results</a></h2>
                 <p align="justify">
-                    We intend to characterize the gains from personalised HRTFs (compared to general) and the loss from self-supervision 
-                    (compared to supervised methods where clean labeled data is available). Hence, we compare with several baselines 
-                    as follows:
+                    The methods we evaluate are as follows (we are using M=8 channels):
                     </p><ul align="justify">
-                        <li>GENERAL - Supervised model where training data is synthesized from generic HRTFs (from the CIPIC [3] HRTF database)</li>
-                        <li>PERSONALIZED* - Supervised training where the personal HRTF (measured for few users) is used to create the training data </li>
-                        <li>SELF - Self-supervised training with "somewhat clean" data, as proposed in this paper </li>
-                        <li>SEMI - Same as SELF but with half of the sources being clean</li>
-                        <li>FEW-SEMI - Same as SELF but with only 1 hour of training</li>
+                        <li><b>REVERB CLEAN</b> - The original multi-channel audio we want to code and reconstruct, or the groundtruth.</li>
+                        <li><b>OPUS12</b>  - Use OPUS to code each channel independently. 12 kbps per channel, which means 8*12=96 kbps in totall</li>
+                        <li><b>OPUS6</b>  - Use OPUS to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
+                        <li><b>ENCODEC</b>  - Use Encodec to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
+                        <li><b>HIFI-CODEC</b>  - Use HiFi-Codec to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
+                        <li><b>SUB-BAND CODEC (Ours without SpatialCodec)</b> - Use our designed SUB-BAND CODEC to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
+                        <li><b>ENCODEC+SPATIALCODEC (OURS)</b> - Our framework. Using Encodec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
+                        <li><b>HIFICODEC+SPATIALCODEC (OURS)</b> - Our framework. Using HiFi-Codec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
+                        <li><b>SUB-BAND CODEC+SPATIALCODEC (OURS)</b> - Our framework. Using Sub-band Codec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
+                        <li><b>MIMO E2E (OURS)</b> - Blackbox end to end multi-channel in multi-channel out model, 12kbps</li>
                     </ul>
-                    Results below show that our self-supervised method closes the gap between GENERAL and the ideal PERSONALIZED* model.
                 <p></p>
-                <a><img src="img/result1.png" style="object-fit:contain;
+
+                <p align="justify">
+                    The metrics we use are as follows:
+                    </p><ul align="justify">
+                        <li><b>DOA ERR</b> - DOA estimation error using MUSIC algorithm [1]</li>
+                        <li><b>RTF ERR</b> -  Relative transfer function error [2]</li>
+                        <li><b>SPATIAL SIM</b> - Spatial Similarity as defined in our paper.</li>
+                        <li><b>BEAM SNR</b> - SNR of beamformed audio, use groundtruth signals' beamforming result as referece</li>
+                        <li><b>BEAM PESQ</b> - PESQ of beamformed audio, use groundtruth signals' beamforming result as referece</li>
+                        <li><b>BEAM SIG</b> - DNSMOS SIG_raw value of beamformed audio</li>
+                        <li><b>BEAM BAK</b> - PDNSMOS BAK_raw value of beamformed audio</li>
+                    </ul>
+                    <!-- Results below show that our self-supervised method closes the gap between GENERAL and the ideal PERSONALIZED* model. -->
+                <p></p>
+                <center>
+
+                    <a><img src="img/results.png" style="object-fit:contain;
+                        width:1300px;
+                        height:500px"></a>
+                </center>
+
+ 
+                <!-- <a><img src="img/result2.png" style="object-fit:contain;
                             width:500px;
-                            height:500px"></a>
-                <p>We also compare between region based separation with classical all-source separation. 
-                    We only consider the case when there is only one speaker is the first region and compare the SNR for that single speaker. 
-                    All-source separation model is the same achitecture and is trained assuming known perosnal HRTF and known number of sources. 
-                    Even then, our self-supervised model can achieve a gain of around 25%.</p>
-                <a><img src="img/result2.png" style="object-fit:contain;
-                            width:500px;
-                            height:500px;"></a>
+                            height:500px;"></a> -->
                     
             </div>
 
@@ -567,35 +571,6 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                 </p>
 
                 <br>
-                
-
-                <h4><b><p style="color:red;font-size:18px;">Two-Source Mixtures (3 samples below)</p></b></h4>
-                <table class="audio_demos">
-                    <thead>
-                        <tr>
-                            <th style="text-align:center;">Mixture</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr style="border-top:1px solid black">
-                            <!-- <td rowspan="2">
-                                <b>A</b>
-                            </td> -->
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="mixture/idx2.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            
-                        </tr>
-
-
-
-
-
-                    </tbody>
-                </table>
 
 
                 <table class="audio_demos">
