@@ -8,7 +8,7 @@
         <meta name="description" content="SpatialCodec Demos">
         <meta name="author" content="Zhongweiyang Xu">
 
-	    <title>Learning to Separate Voices by Spatial Regions</title>
+	    <title>Spatial Codec: Neural Spatial Speech Coding</title>
 
         <!-- Bootflat CSS -->
         <link rel="stylesheet" href="css/bootflat.css">
@@ -558,11 +558,8 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                 <h2><a class="subtitle">Audio Demo</a></h2>
 
                 <p align="justify">
-                    Here are some (binaural) audio samples for listening. The "mixture" is the aggregate of all sounds as recorded by the 
-                    earphone. The rows denote each region and the columns denote the ground truth signal in that region, followed by the 
-                    various methods being compared. For example, row:R1 and col:Ground is the audio of the ground truth signal 
-                    arriving from region R1. This clip could be a single source, a mixture of few sources, or could be empty, depending on
-                    the signals present in this region. 
+                    Here are some audio samples. For each mutli-channel sample, we first demo each channel indepedently. Then we beamform towards the groundtruth DOA and play
+                    the beamform results. Last, we show the spatial feature visualization of the sample.
                     <!-- <ul align="justify" >
                         <li>Unprocessed Mixture - original binaural sound mixture</li>
                         <li>MIMO TasNet - refer to the approach in [2], where the network configurations are slightly changed such that the model is noncausal and has a comparable size to our model</li>
@@ -572,132 +569,569 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 
                 <br>
 
+                <!-- sample 1 start -->
+                <h4><b><p style="color:red;font-size:18px;">Sample 1: Spatial Feature Visualization</p></b></h4>
 
+                <figure>
+                    <img src="img/sample_73.png" style="object-fit:contain;
+                        width:1500px;
+                        height:550px" class="center" title='Figure 1: Our pipline, training and inference'>
+                        <center>
+                            <figcaption>Figure 2: Spatial Feature Visualization</figcaption>
+                        </center>
+
+                </figure>
+
+                <h4><b><p style="color:red;font-size:18px;">Sample 1: All-Channel Outputs</p></b></h4>
                 <table class="audio_demos">
                     <thead>
                         <tr>
-                            <th style="text-align:center;">Regions</th>
-                            <th style="text-align:center;">Ground</th>
-                            <th style="text-align:center;">General</th>
-                            <th style="text-align:center;">Personalized</th>
-                            <th style="text-align:center;">Self</th>
-                            <th style="text-align:center;">Semi</th>
-                            <th style="text-align:center;">Few-Semi</th>
+                            <th style="text-align:center;">Methods</th>
+                            <th style="text-align:center;">C1</th>
+                            <th style="text-align:center;">C2</th>
+                            <th style="text-align:center;">C3</th>
+                            <th style="text-align:center;">C4</th>
+                            <th style="text-align:center;">C5</th>
+                            <th style="text-align:center;">C6</th>
+                            <th style="text-align:center;">C7</th>
+                            <th style="text-align:center;">C8</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr style="border-top:1px solid black">
                             <td>
-                                <b>R1</b>
+                                <b>Reverberate Clean (Groudtruth)</b>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="ground/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_0.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="general/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_1.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="personal/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_2.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="self/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_3.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="semi/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_4.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="few_semi/idx2r1.wav" type="audio/wav">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/reverb_clean/sample_73_7.wav" type="audio/wav">
                                 </audio>
                             </td>
                         </tr>
                         
-
                         <tr style="border-top:1px solid black">
                             <td>
-                                <b>R2</b>
+                                <b>OPUS12 (Channel Independent)</b>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="ground/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_0.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="general/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_1.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="personal/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_2.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="self/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_3.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="semi/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_4.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="few_semi/idx2r2.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus12/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/opus12/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/opus12/sample_73_7.wav" type="audio/wav">
                                 </audio>
                             </td>
                         </tr>
-
                         <tr style="border-top:1px solid black">
                             <td>
-                                <b>R3</b>
+                                <b>OPUS6 (Channel Independent)</b>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="ground/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_0.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="general/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_1.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="personal/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_2.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="self/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_3.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="semi/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_4.wav" type="audio/wav">
                                 </audio>
                             </td>
                             <td>
                                 <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="few_semi/idx2r3.wav" type="audio/wav">
+                                    <source src="samples/all_channels/opus6/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/opus6/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/opus6/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>HIFICODEC (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/hificodec/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>SUB-BAND CODEC (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/subband_codec/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>ENCODEC+SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_encodec/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>HIFICODEC+SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_hificodec/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>SUB-BAND CODEC +SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/spatialcodec_subbandcodec/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_7.wav" type="audio/wav">
                                 </audio>
                             </td>
                         </tr>
                         
                     </tbody>
                 </table>
+
+                <br>
+                <h4><b><p style="color:red;font-size:18px;">Sample 1: Beamforming Outputs</p></b></h4>
+                <table class="audio_demos">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;">Methods</th>
+                            <th style="text-align:center;">beamform result</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>Reverberate Clean (Groudtruth)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/reverb_clean/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        
+
+
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>OPUS12 (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/opus12/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>OPUS6 (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/opus6/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>ENCODEC (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/encodec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>HIFICODEC (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/hificodec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>SUB-BAND CODEC (Channel Independent)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/subband_codec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>ENCODEC+SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/spatialcodec_encodec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>HIFICODEC+SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/spatialcodec_hificodec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>SUB-BAND CODEC +SpatialCodec (OURS)</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/spatialcodec_subbandcodec/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/mimo_e2e/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+
+
+                <br>  
+
+                <!-- sample 1 end -->
 
                 <table class="audio_demos">
                     <thead>
