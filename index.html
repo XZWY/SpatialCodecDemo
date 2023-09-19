@@ -444,7 +444,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 			<div id="paper_title">
     	        <h1>SpatialCodec: Neural Spatial Speech Coding</h1>
                 <!-- <p style="color:lightblue;font-size:18px;">Published as conference paper at ICML 2022  -->
-                    [<a href="https://github.com/XZWY/SpatialCodec">code</a>]</p>
+                    [<a href="https://github.com/XZWY/SpatialCodec">code</a>][<a href="https://arxiv.org/abs/2309.07432">pdf</a>]</p>
 			
 
 
@@ -519,10 +519,10 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         <li><b>ENCODEC</b>  - Use Encodec to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
                         <li><b>HIFI-CODEC</b>  - Use HiFi-Codec to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
                         <li><b>SUB-BAND CODEC (Ours without SpatialCodec)</b> - Use our designed SUB-BAND CODEC to code each channel independently. 6 kbps per channel, which means 8*6=48 kbps in totall</li>
+                        <li><b>MIMO E2E (OURS)</b> - Blackbox end to end multi-channel in multi-channel out model, 12kbps</li>
                         <li><b>ENCODEC+SPATIALCODEC (OURS)</b> - Our framework. Using Encodec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
                         <li><b>HIFICODEC+SPATIALCODEC (OURS)</b> - Our framework. Using HiFi-Codec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
                         <li><b>SUB-BAND CODEC+SPATIALCODEC (OURS)</b> - Our framework. Using Sub-band Codec as the first branch and our SpatialCodec as second branch. 6+6=12kbps</li>
-                        <li><b>MIMO E2E (OURS)</b> - Blackbox end to end multi-channel in multi-channel out model, 12kbps</li>
                     </ul>
                 <p></p>
 
@@ -827,6 +827,51 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_73_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -960,51 +1005,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_0.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_1.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_2.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_3.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_4.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_5.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_6.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_73_7.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -1085,6 +1086,16 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/mimo_e2e/sample_73.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -1113,16 +1124,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/beams/mimo_e2e/sample_73.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -1394,6 +1396,51 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_223_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -1528,51 +1575,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_0.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_1.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_2.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_3.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_4.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_5.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_6.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_223_7.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -1653,6 +1656,16 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/mimo_e2e/sample_223.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -1681,16 +1694,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/beams/mimo_e2e/sample_223.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -1959,6 +1963,51 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_13_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -2093,51 +2142,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_0.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_1.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_2.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_3.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_4.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_5.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_6.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_13_7.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -2218,6 +2223,16 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/mimo_e2e/sample_13.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -2246,16 +2261,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/beams/mimo_e2e/sample_13.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -2525,6 +2531,51 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_0.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_1.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_2.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_3.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_4.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_5.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_6.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/all_channels/mimo_e2e/sample_15_7.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -2659,51 +2710,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_0.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_1.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_2.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_3.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_4.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_5.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_6.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/all_channels/mimo_e2e/sample_15_7.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
@@ -2784,6 +2791,16 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                         </tr>
                         <tr style="border-top:1px solid black">
                             <td>
+                                <b>MIMO E2E</b>
+                            </td>
+                            <td>
+                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
+                                    <source src="samples/beams/mimo_e2e/sample_15.wav" type="audio/wav">
+                                </audio>
+                            </td>
+                        </tr>
+                        <tr style="border-top:1px solid black">
+                            <td>
                                 <b>ENCODEC+SpatialCodec (OURS)</b>
                             </td>
                             <td>
@@ -2812,16 +2829,7 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
                                 </audio>
                             </td>
                         </tr>
-                        <tr style="border-top:1px solid black">
-                            <td>
-                                <b>MIMO E2E</b>
-                            </td>
-                            <td>
-                                <audio controls="" class="audio-player" preload="metadata" style="width: 220px;">
-                                    <source src="samples/beams/mimo_e2e/sample_15.wav" type="audio/wav">
-                                </audio>
-                            </td>
-                        </tr>
+                        
                         
                     </tbody>
                 </table>
